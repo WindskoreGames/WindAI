@@ -24,26 +24,40 @@ document.addEventListener('DOMContentLoaded', () => {
         chatContainer.scrollTop = chatContainer.scrollHeight;
     }
 
+    // Korrigerad Levenshtein-avstånd funktion
+    function levenshteinDistance(a, b) {
+        const m = a.length;
+        const n = b.length;
+        if (m === 0) return n;
+        if (n === 0) return m;
+
+        let row = [];
+        for (let i = 0; i <= n; i++) {
+            row[i] = i;
+        }
+
+        for (let j = 1; j <= m; j++) {
+            let prev = row[0];
+            row[0] = j;
+            for (let i = 1; i <= n; i++) {
+                const curr = row[i];
+                const cost = (a[j - 1] === b[i - 1]) ? 0 : 1;
+                row[i] = Math.min(
+                    row[i - 1] + 1, // insert
+                    curr + 1,       // delete
+                    prev + cost     // substitute
+                );
+                prev = curr;
+            }
+        }
+        return row[n];
+    }
+
     // Funktion för att hitta bästa matchning
     function findBestResponse(query) {
         query = query.toLowerCase().trim();
         let bestMatch = null;
         let highestScore = 0;
-
-        // Beräkna likhet med Levenshtein-avstånd (enkel implementation)
-        function levenshteinDistance(a, b) {
-            const matrix = Array.from({ length: b.length + 1 }, (_, i) => i);
-            for (let i = 1; i <= a.length; i++) {
-                let prev = i;
-                for (let j = 1; j <= b.length; j++) {
-                    const temp = matrix[j];
-                    matrix[j] = prev + (a[i-1] !== b[j-1]);
-                    matrix[j] = Math.min(matrix[j], matrix[j-1] + 1, prev + 1);
-                    prev = temp;
-                }
-            }
-            return matrix[b.length];
-        }
 
         knowledgeBase.forEach(item => {
             item.keywords.forEach(keyword => {
