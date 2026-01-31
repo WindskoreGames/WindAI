@@ -1,0 +1,85 @@
+// data.json
+[
+    {
+        "keywords": ["hej", "hallå", "tjenare", "god dag"],
+        "response": "Hej! Hur kan jag hjälpa dig idag?",
+        "followUps": ["Vad funderar du på?", "Berätta mer!"]
+    },
+    {
+        "keywords": ["vad är ai", "artificiell intelligens", "ai definition"],
+        "response": "AI, eller artificiell intelligens, är simulering av mänsklig intelligens i maskiner. Jag är en enkel statisk version!"
+    },
+    {
+        "keywords": ["väder", "vädret idag", "prognos"],
+        "response": "Jag är statisk och har ingen realtidsdata, men generellt är vädret oförutsägbart. Kolla en väderapp!"
+    },
+    {
+        "keywords": ["matematik", "2+2", "räknar du"],
+        "response": "2 + 2 = 4. Jag kan enkla beräkningar, men för komplexa saker, använd en kalkylator."
+    },
+    {
+        "keywords": ["historia", "vem vann ww2", "världskrig"],
+        "response": "Allierade vann Andra världskriget. USA, Storbritannien, Sovjet m.fl. mot Axelmakterna."
+    },
+    {
+        "keywords": ["programmering", "javascript", "kod"],
+        "response": "JavaScript är ett programmeringsspråk för webben. Jag är skriven i det!"
+    },
+    {
+        "keywords": ["musik", "bästa låten", "rekommendation"],
+        "response": "Bästa låten är subjektiv, men prova 'Bohemian Rhapsody' av Queen.",
+        "followUps": ["Vad gillar du för musik?", "Någon specifik genre?"]
+    },
+    {
+        "keywords": ["film", "bästa filmen", "rekommendation"],
+        "response": "En klassiker är 'The Godfather'. Vad för genre gillar du?"
+    },
+    {
+        "keywords": ["vetenskap", "einstein", "relativitet"],
+        "response": "Einsteins relativitetsteori: E=mc². Energi är massa gånger ljusets hastighet i kvadrat."
+    },
+    {
+        "keywords": ["sport", "fotboll", "vm"],
+        "response": "Fotboll är världens populäraste sport. Senaste VM-vinnare? Beror på år, men Argentina vann 2022."
+    },
+    {
+        "keywords": ["resor", "bästa resmålet", "semester"],
+        "response": "Paris är romantiskt, Tokyo spännande. Vart vill du åka?"
+    },
+    {
+        "keywords": ["mat", "recept", "laga mat"],
+        "response": "Prova pasta carbonara: Spaghetti, ägg, pancetta, parmesan. Enkelt och gott!"
+    },
+    {
+        "keywords": ["hälsa", "träning", "tips"],
+        "response": "Träna 30 min om dagen, ät balanserat. Drick vatten!"
+    },
+    {
+        "keywords": ["teknik", "smartphone", "bästa mobilen"],
+        "response": "Bästa smartphone beror på behov, men iPhone eller Samsung Galaxy är populära."
+    },
+    {
+        "keywords": ["miljö", "klimatförändring", "global uppvärmning"],
+        "response": "Klimatförändring är allvarligt. Minska utsläpp genom återvinning och förnybar energi."
+    },
+    {
+        "keywords": ["ekonomi", "aktier", "investera"],
+        "response": "Investera klokt: Diversifiera portföljen. Inte finansiell rådgivning!"
+    },
+    {
+        "keywords": ["språk", "lära svenska", "ord"],
+        "response": "Hej betyder hello. Tack betyder thank you. Lär dig mer via appar som Duolingo."
+    },
+    {
+        "keywords": ["djur", "hund", "katt"],
+        "response": "Hundar är lojala, katter självständiga. Vilket är ditt favoritdjur?"
+    },
+    {
+        "keywords": ["astronomi", "planeter", "solssystemet"],
+        "response": "Solsystemet har 8 planeter: Merkurius, Venus, Jorden, Mars, Jupiter, Saturnus, Uranus, Neptunus."
+    },
+    {
+        "keywords": ["filosofi", "meningsfullt liv", "tankar"],
+        "response": "Aristoteles sa: Lycka är meningen med livet. Vad tror du?"
+    }
+]
