@@ -3,23 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Statisk AI - Extremt Smart</title>
+    <title>Statistisk AI</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; }
-        #chat-container { border: 1px solid #ccc; padding: 10px; height: 400px; overflow-y: scroll; }
-        #user-input { width: 80%; padding: 5px; }
-        #send-btn { padding: 5px 10px; }
-        .message { margin: 5px 0; }
-        .user { text-align: right; color: blue; }
-        .ai { text-align: left; color: green; }
+        #chat { border: 1px solid #ccc; padding: 10px; height: 300px; overflow-y: scroll; }
+        #input { width: 80%; padding: 10px; }
+        #send { padding: 10px; }
     </style>
 </head>
 <body>
-    <h1>Statisk AI - SKIT Smart!</h1>
-    <div id="chat-container"></div>
-    <input type="text" id="user-input" placeholder="Skriv din fråga här...">
-    <button id="send-btn">Skicka</button>
+    <h1>Statistisk AI</h1>
+    <p>Detta är en helt statisk AI som använder data från data.json för att svara på frågor baserat på statistiska sannolikheter. Ställ en fråga som innehåller nyckelord som "befolkning", "ekonomi" eller "miljö" för att få ett slumpmässigt svar från datan.</p>
+    <div id="chat"></div>
+    <input type="text" id="input" placeholder="Ställ en fråga...">
+    <button id="send">Skicka</button>
 
-    <script src="script.js"></script>
+    <script>
+        let data = null;
+
+        // Ladda data.json
+        fetch('data.json')
+            .then(response => response.json())
+            .then(json => {
+                data = json;
+                addMessage('AI: Hej! Fråga mig om statistik.');
+            })
+            .catch(error => console.error('Fel vid laddning av data:', error));
+
+        // Funktion för att lägga till meddelande i chatten
+        function addMessage(message) {
+            const chat = document.getElementById('chat');
+            const div = document.createElement('div');
+            div.textContent = message;
+            chat.appendChild(div);
+            chat.scrollTop = chat.scrollHeight;
+        }
+
+        // Hantera skickaknapp
+        document.getElementById('send').addEventListener('click', () => {
+            const input = document.getElementById('input');
+            const question = input.value.trim().toLowerCase();
+            if (question) {
+                addMessage('Du: ' + question);
+                input.value = '';
+
+                // Hitta matchande kategori baserat på nyckelord
+                let category = null;
+                if (question.includes('befolkning')) category = 'befolkning';
+                else if (question.includes('ekonomi')) category = 'ekonomi';
+                else if (question.includes('miljö')) category = 'miljö';
+                else {
+                    addMessage('AI: Jag förstår inte frågan. Försök med nyckelord som befolkning, ekonomi eller miljö.');
+                    return;
+                }
+
+                // Välj ett slumpmässigt (statistiskt) svar från kategorin
+                const responses = data[category];
+                if (responses && responses.length > 0) {
+                    const randomIndex = Math.floor(Math.random() * responses.length);
+                    addMessage('AI: ' + responses[randomIndex]);
+                } else {
+                    addMessage('AI: Ingen data tillgänglig för denna kategori.');
+                }
+            }
+        });
+    </script>
 </body>
 </html>
