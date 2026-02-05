@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Min AI</title>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        #chat { border: 1px solid #ccc; padding: 10px; width: 400px; height: 300px; overflow-y: scroll; }
+        #userInput { width: 300px; }
+    </style>
+</head>
+<body>
+
+<h2>Prata med AI:n</h2>
+<div id="chat"></div>
+<input type="text" id="userInput" placeholder="Skriv något...">
+<button onclick="sendMessage()">Skicka</button>
+
+<script src="aiData.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
