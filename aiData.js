@@ -4,8 +4,6 @@ const aiResponses = {
   "hur mår du": "Jag mår bra, tack! Och du?",
   "vad heter du": "Jag heter WindskoreAI?",
   "sluta": "Hejdå! Vi ses nästa gång.",
-  
-  // Nya 100 nyckelord/svar
   "god morgon": "God morgon! Hoppas du sovit gott!",
   "god natt": "God natt! Sov så gott!",
   "vad gör du": "Jag pratar med dig just nu!",
@@ -256,5 +254,4 @@ const aiResponses = {
   "middag": "Middag är mysigt att äta tillsammans.",
   "frukost": "Frukost är dagens viktigaste mål.",
   "lunch": "Lunch är perfekt för att fylla på energi."
-};
 };
